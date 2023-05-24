@@ -1,0 +1,79 @@
+openapi: 3.0.1
+info:
+  description: Servicio de entidad ClienteCdtDigitalES.
+  version: 0.0.1
+  title: NovedadES
+  contact:
+    name: MiBanco
+    url: https://www.mibanco.com.co/
+    email: api@mibanco.com.co
+  license:
+    name: GNU GPLv3
+    url: ‘https://www.gnu.org/licenses/gpl-3.0.html’
+tags:
+  - name: Crear novedad cliente CDT
+    description: Crear novedad cliente CDT
+#----------------------------
+#Endpoints del Entidad
+#----------------------------
+paths:
+  /v1/es/novedadCDTDigital:
+    post:
+      tags:
+        - Crear novedad cdt
+      operationId: crearNovedadClienteCDT
+      requestBody:
+        description: Crear novedad ccliente cdt
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NovedadCDTDigitalType"
+      responses:
+        "200":
+          description: Novedad creada.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/NovedadCDTDigitalType"
+        "400":
+          description: "Parámetros de entrada no validos."
+        "404":
+          description: "No se encuentra el cliente."
+#---------------------------------------------
+#Se declaran los Modelos/Schemas del servicio
+#---------------------------------------------
+components:
+  schemas:
+    NovedadCDTDigitalType:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        numeroDocumento:
+          type: string
+        codigoNovedad:
+          type: string
+        descripcionNovedad:
+          type: string
+        fechaNovedad:
+          type: string
+        #customParams:
+        #type: Array
+        #items:
+        #$ref: '#/components/schemas/CustomParamType'
+
+    crearNovedadClienteCDTInput:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        numeroDocumento:
+          type: string
+        codigoNovedad:
+          type: integer
+        descripcionNovedad:
+          type: string
