@@ -13,11 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("crearNovedadClienteCDTInput")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-25T11:45:20.819307700-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-25T15:28:41.354261700-05:00[America/Bogota]")
 public class CrearNovedadClienteCDTInput   {
   private @Valid Long id;
   private @Valid String numeroDocumento;
-  private @Valid Integer codigoNovedad;
+  private @Valid String codigoNovedad;
   private @Valid String descripcionNovedad;
 
   /**
@@ -58,19 +58,19 @@ public class CrearNovedadClienteCDTInput   {
 
   /**
    **/
-  public CrearNovedadClienteCDTInput codigoNovedad(Integer codigoNovedad) {
+  public CrearNovedadClienteCDTInput codigoNovedad(String codigoNovedad) {
     this.codigoNovedad = codigoNovedad;
     return this;
   }
 
   
   @JsonProperty("codigoNovedad")
-  public Integer getCodigoNovedad() {
+  public String getCodigoNovedad() {
     return codigoNovedad;
   }
 
   @JsonProperty("codigoNovedad")
-  public void setCodigoNovedad(Integer codigoNovedad) {
+  public void setCodigoNovedad(String codigoNovedad) {
     this.codigoNovedad = codigoNovedad;
   }
 

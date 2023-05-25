@@ -58,13 +58,11 @@ components:
           type: string
         descripcionNovedad:
           type: string
+          nullable: false
+          minLength: 1
         fechaNovedad:
           type: string
-        #customParams:
-        #type: Array
-        #items:
-        #$ref: '#/components/schemas/CustomParamType'
-
+          format: date-time
     crearNovedadClienteCDTInput:
       type: object
       properties:
@@ -74,6 +72,6 @@ components:
         numeroDocumento:
           type: string
         codigoNovedad:
-          type: integer
+          type: string
         descripcionNovedad:
           type: string

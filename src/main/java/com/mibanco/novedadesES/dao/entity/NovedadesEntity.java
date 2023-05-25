@@ -15,6 +15,6 @@ public class NovedadesEntity {
     private Integer id;
     private String numeroDocumento;
     private String codigoNovedad;
-    private String descipcionNovedad;
+    private String descripcionNovedad;
     private Date fechaNovedad;
 }

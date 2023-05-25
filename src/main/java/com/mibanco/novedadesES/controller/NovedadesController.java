@@ -7,7 +7,6 @@ import com.mibanco.novedadesES.services.impl.NovedadesClienteCDTImpl;
 import com.mibanco.novedadesES.utils.ErrorCts;
 import com.mibanco.novedadesES.utils.NovedadesException;
 import com.mibanco.novedadesES.utils.NovedadesMapper;
-import com.mibanco.novedadesES.utils.NovedadesValidator;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
