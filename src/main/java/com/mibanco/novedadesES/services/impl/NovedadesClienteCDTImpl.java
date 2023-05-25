@@ -35,7 +35,7 @@ public class NovedadesClienteCDTImpl implements NovedadesClienteCDTService {
     @Transactional
     public NovedadCDTDigitalType crearNovedadCdtDigitalType(NovedadesEntity novedadesEntity) {
 
-        logger.info("Inicia creacion de crearNovedadCdtDigitalType");
+        logger.info("Inicia creacion de crearNovedadCdtDigitalTypeImpl");
 
         try {
             NovedadCDTDigitalType novedadCDTDigitalType = novedadesMapper.novedadCDTDigitalToType(novedadesEntity);
@@ -43,10 +43,10 @@ public class NovedadesClienteCDTImpl implements NovedadesClienteCDTService {
 
             novedadClienteCDTDao.persist(novedadesEntity);
 
-            logger.info("Termina creacion de crearNovedadCdtDigitalType");
+            logger.info("Termina creacion de crearNovedadCdtDigitalTypeImpl");
             return  novedadCDTDigitalType;
         }catch (NovedadesException e){
-            logger.error(ErrorCts.OUTPUT_CLIENTES + " en NovedadesClienteCDTImpl ");
+            logger.error(ErrorCts.OUTPUT_CLIENTES + " en NovedadesClienteCDTImpl exception: " + e.getMessage());
             throw new NovedadesException(ErrorCts.SERVICIO + e.getMessage() + "  en NovedadesClienteCDTImpl ");
         }
     }

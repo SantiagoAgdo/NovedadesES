@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "com.mibanco.novedadClienteCDT";
+option java_outer_classname = "CrearNovedadClienteCDTGrpc";
+
+package CrearNovedadClienteCDTGrpc;
+
+message NovedadCDTDigitalGrpc {
+  string id = 1;
+  string numeroDocumento = 2;
+  string codigoNovedad =3;
+  string descripcionNovedad = 4;
+  string fechaNovedad = 5;
+}
+
+message Creado{
+  NovedadCDTDigitalGrpc novedadCDTDigital = 1;
+}
+service NovedadClienteCDTServiceGrpc {
+  rpc crearNovedadCDT(NovedadCDTDigitalGrpc) returns (Creado);
+}
