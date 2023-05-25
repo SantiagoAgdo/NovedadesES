@@ -3,16 +3,9 @@ package com.mibanco.novedadesES.utils;
 import com.mibanco.novedadesES.controller.NovedadesController;
 import com.mibanco.novedadesES.gen.type.NovedadCDTDigitalType;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.validation.Validator;
 import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 @ApplicationScoped
 public class NovedadesValidator {
@@ -20,11 +13,11 @@ public class NovedadesValidator {
     public static final Logger logger = LoggerFactory.getLogger(NovedadesController.class);
 
     public Response verificarNovedadesCDT(NovedadCDTDigitalType novedadCDTDigitalType) throws NovedadesException {
-        if (novedadCDTDigitalType.getNumeroDocumento() == null){
+        if (novedadCDTDigitalType.getNumeroDocumento() == null) {
             throw new NovedadesException(ErrorCts.VALIDACION + " Numero de documento no puedo ser nulo");
         }
 
-        if (novedadCDTDigitalType.getCodigoNovedad() == null){
+        if (novedadCDTDigitalType.getCodigoNovedad() == null) {
             throw new NovedadesException(ErrorCts.VALIDACION + " Codigo no puedo ser nulo");
         }
 
@@ -36,7 +29,6 @@ public class NovedadesValidator {
 
         return Response.ok().build();
     }
-
 
 
 }
