@@ -13,9 +13,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("NovedadCDTDigitalType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-25T15:28:41.354261700-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-26T10:47:56.282911-05:00[America/Bogota]")
 public class NovedadCDTDigitalType   {
-  private @Valid Long id;
+  private @Valid String id;
   private @Valid String numeroDocumento;
   private @Valid String codigoNovedad;
   private @Valid String descripcionNovedad;
@@ -23,19 +23,19 @@ public class NovedadCDTDigitalType   {
 
   /**
    **/
-  public NovedadCDTDigitalType id(Long id) {
+  public NovedadCDTDigitalType id(String id) {
     this.id = id;
     return this;
   }
 
   
   @JsonProperty("id")
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
   @JsonProperty("id")
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

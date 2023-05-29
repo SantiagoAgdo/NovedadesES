@@ -27,15 +27,15 @@ public class NovedadesController implements V1NovedadesESApi {
     public List<NovedadCDTDigitalType> crearNovedadClienteCDT(NovedadCDTDigitalType novedadCDTDigitalType) {
         logger.info("Inicia crearNovedadClienteCDTController");
 
-        try {
+        try{
             NovedadesEntity novedadesEntity = novedadesMapper.novedadTypeToEntity(novedadCDTDigitalType);
             novedadCDTDigitalType = novedadesClienteCDT.crearNovedadCdtDigitalType(novedadesEntity);
 
             logger.info("Finaliza crearNovedadClienteCDTController");
             return List.of(novedadCDTDigitalType);
-        } catch (NovedadesException novedadesException) {
+        }catch (NovedadesException novedadesException){
             logger.error(ErrorCts.SERVICIO + " crearNovedadClienteCDTController exception: " + novedadesException.getMessage());
-            throw new NovedadesException(ErrorCts.SERVICIO + novedadesException.getMessage() + " En crearNovedadClienteCDTController");
+            throw  new NovedadesException(ErrorCts.SERVICIO + novedadesException.getMessage() + " En crearNovedadClienteCDTController");
         }
 
     }

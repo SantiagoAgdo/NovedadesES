@@ -15,6 +15,8 @@ import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 @ApplicationScoped
 public class NovedadesClienteCDTImpl implements NovedadesClienteCDTService {
 
@@ -42,11 +44,15 @@ public class NovedadesClienteCDTImpl implements NovedadesClienteCDTService {
             novedadClienteCDTDao.persist(novedadesEntity);
 
             logger.info("Termina creacion de crearNovedadCdtDigitalTypeImpl");
-            return novedadCDTDigitalType;
-        } catch (NovedadesException e) {
+            return  novedadCDTDigitalType;
+        }catch (NovedadesException e){
             logger.error(ErrorCts.OUTPUT_CLIENTES + " en NovedadesClienteCDTImpl exception: " + e.getMessage());
             throw new NovedadesException(ErrorCts.SERVICIO + e.getMessage() + "  en NovedadesClienteCDTImpl ");
         }
     }
 
+    @Override
+    public List<NovedadCDTDigitalType> getNovedad() {
+        return null;
+    }
 }

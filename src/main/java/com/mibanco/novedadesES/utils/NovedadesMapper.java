@@ -8,11 +8,11 @@ import org.modelmapper.ModelMapper;
 @ApplicationScoped
 public class NovedadesMapper {
 
-    public NovedadCDTDigitalType novedadCDTDigitalToType(NovedadesEntity novedadesEntity) {
+    public NovedadCDTDigitalType novedadCDTDigitalToType(NovedadesEntity novedadesEntity){
         return new ModelMapper().map(novedadesEntity, NovedadCDTDigitalType.class);
     }
 
-    public NovedadesEntity novedadTypeToEntity(NovedadCDTDigitalType novedadCDTDigitalType) {
+    public NovedadesEntity novedadTypeToEntity(NovedadCDTDigitalType novedadCDTDigitalType){
         return new ModelMapper().map(novedadCDTDigitalType, NovedadesEntity.class);
     }
 

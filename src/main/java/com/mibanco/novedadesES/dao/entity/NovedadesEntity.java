@@ -7,12 +7,12 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "novedad_cdt_digital")
+@Table(name= "novedad_cdt_digital")
 public class NovedadesEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     private String numeroDocumento;
     private String codigoNovedad;
     private String descripcionNovedad;

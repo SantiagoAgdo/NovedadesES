@@ -13,30 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("crearNovedadClienteCDTInput")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-25T15:28:41.354261700-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-26T10:47:56.282911-05:00[America/Bogota]")
 public class CrearNovedadClienteCDTInput   {
-  private @Valid Long id;
   private @Valid String numeroDocumento;
   private @Valid String codigoNovedad;
   private @Valid String descripcionNovedad;
-
-  /**
-   **/
-  public CrearNovedadClienteCDTInput id(Long id) {
-    this.id = id;
-    return this;
-  }
-
-  
-  @JsonProperty("id")
-  public Long getId() {
-    return id;
-  }
-
-  @JsonProperty("id")
-  public void setId(Long id) {
-    this.id = id;
-  }
 
   /**
    **/
@@ -102,15 +83,14 @@ public class CrearNovedadClienteCDTInput   {
       return false;
     }
     CrearNovedadClienteCDTInput crearNovedadClienteCDTInput = (CrearNovedadClienteCDTInput) o;
-    return Objects.equals(this.id, crearNovedadClienteCDTInput.id) &&
-        Objects.equals(this.numeroDocumento, crearNovedadClienteCDTInput.numeroDocumento) &&
+    return Objects.equals(this.numeroDocumento, crearNovedadClienteCDTInput.numeroDocumento) &&
         Objects.equals(this.codigoNovedad, crearNovedadClienteCDTInput.codigoNovedad) &&
         Objects.equals(this.descripcionNovedad, crearNovedadClienteCDTInput.descripcionNovedad);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, numeroDocumento, codigoNovedad, descripcionNovedad);
+    return Objects.hash(numeroDocumento, codigoNovedad, descripcionNovedad);
   }
 
   @Override
@@ -118,7 +98,6 @@ public class CrearNovedadClienteCDTInput   {
     StringBuilder sb = new StringBuilder();
     sb.append("class CrearNovedadClienteCDTInput {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    numeroDocumento: ").append(toIndentedString(numeroDocumento)).append("\n");
     sb.append("    codigoNovedad: ").append(toIndentedString(codigoNovedad)).append("\n");
     sb.append("    descripcionNovedad: ").append(toIndentedString(descripcionNovedad)).append("\n");
