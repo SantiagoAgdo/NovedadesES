@@ -38,7 +38,7 @@ public class NovedadesControllerTest {
         Mockito.when(objectMapperMock.readValue(ArgumentMatchers.any(byte[].class), ArgumentMatchers.any(Class.class)))
                 .thenReturn(new NovedadCDTDigitalType());
 
-        String json = new String(Files.readAllBytes(Paths.get("src/main/resources/esNovedadesES-api.json")), StandardCharsets.UTF_8);
+        String json = new String(Files.readAllBytes(Paths.get("src/main/resources/es-NovedadesES-api.json")), StandardCharsets.UTF_8);
         NovedadCDTDigitalType novedadCDTDigitalType = objectMapper.readValue(json, NovedadCDTDigitalType.class);
 
         RestAssured.given()

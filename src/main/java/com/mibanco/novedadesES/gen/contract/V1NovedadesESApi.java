@@ -14,11 +14,15 @@ import jakarta.validation.constraints.*;
 import jakarta.validation.Valid;
 
 @Path("/v1/es/novedadCDTDigital")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-26T10:47:56.282911-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-29T17:46:21.765957700-05:00[America/Bogota]")
 public interface V1NovedadesESApi {
 
     @POST
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     List<NovedadCDTDigitalType> crearNovedadClienteCDT(@Valid NovedadCDTDigitalType novedadCDTDigitalType);
+
+    @GET
+    @Produces({ "application/json" })
+    List<NovedadCDTDigitalType> v1EsNovedadCDTDigitalGet(@QueryParam("numeroDocumento")   String numeroDocumento);
 }

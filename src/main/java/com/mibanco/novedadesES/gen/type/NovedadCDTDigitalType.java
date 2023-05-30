@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("NovedadCDTDigitalType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-26T10:47:56.282911-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-29T17:46:21.765957700-05:00[America/Bogota]")
 public class NovedadCDTDigitalType   {
   private @Valid String id;
   private @Valid String numeroDocumento;

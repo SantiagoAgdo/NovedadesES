@@ -4,6 +4,7 @@ import com.mibanco.novedadesES.dao.entity.NovedadesEntity;
 import com.mibanco.novedadesES.gen.contract.V1NovedadesESApi;
 import com.mibanco.novedadesES.gen.type.NovedadCDTDigitalType;
 import com.mibanco.novedadesES.services.impl.NovedadesClienteCDTImpl;
+import com.mibanco.novedadesES.services.impl.NovedadesConsultaDocumentoImpl;
 import com.mibanco.novedadesES.utils.ErrorCts;
 import com.mibanco.novedadesES.utils.NovedadesException;
 import com.mibanco.novedadesES.utils.NovedadesMapper;
@@ -19,6 +20,9 @@ public class NovedadesController implements V1NovedadesESApi {
 
     @Inject
     NovedadesClienteCDTImpl novedadesClienteCDT;
+
+    @Inject
+    NovedadesConsultaDocumentoImpl novedadesConsultaDocumentoImpl;
 
     @Inject
     NovedadesMapper novedadesMapper;
@@ -38,5 +42,19 @@ public class NovedadesController implements V1NovedadesESApi {
             throw  new NovedadesException(ErrorCts.SERVICIO + novedadesException.getMessage() + " En crearNovedadClienteCDTController");
         }
 
+    }
+
+    @Override
+    public List<NovedadCDTDigitalType> v1EsNovedadCDTDigitalGet(String numeroDocumento) {
+        logger.info("Inicia consultarNovedadesPorNumeroDocumentoController");
+
+        try{
+            List<NovedadCDTDigitalType> list = novedadesConsultaDocumentoImpl.consultarNovedadesPorNumeroDocumento(numeroDocumento);
+            logger.info("Finaliza consultarNovedadesPorNumeroDocumentoController");
+            return list;
+        }catch (NovedadesException novedadesException){
+            logger.error(ErrorCts.SERVICIO + " consultarNovedadesPorNumeroDocumentoController exception: " + novedadesException.getMessage());
+            throw  new NovedadesException(ErrorCts.SERVICIO + novedadesException.getMessage() + " En consultarNovedadesPorNumeroDocumentoController");
+        }
     }
 }

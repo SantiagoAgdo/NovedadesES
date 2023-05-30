@@ -41,6 +41,26 @@ paths:
           description: "Parámetros de entrada no validos."
         "404":
           description: "No se encuentra el cliente."
+
+    get:
+      parameters:
+        - name: numeroDocumento
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Consulta realizada.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/NovedadCDTDigitalType"
+        "400":
+          description: "Parámetros de entrada no validos."
+        "404":
+          description: "No se encuentra la novedad."
 #---------------------------------------------
 #Se declaran los Modelos/Schemas del servicio
 #---------------------------------------------

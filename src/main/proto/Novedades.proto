@@ -21,3 +21,18 @@ message Creado{
 service NovedadClienteCDTServiceGrpc {
   rpc crearNovedadCDT(NovedadCDTDigitalGrpc) returns (Creado);
 }
+
+message GetNovedadByDocumentRequest {
+  string id = 1;
+  string numeroDocumento = 2;
+  string codigoNovedad =3;
+  string descripcionNovedad = 4;
+  string fechaNovedad = 5;
+}
+
+message NovedadResponse{
+  GetNovedadByDocumentRequest novedadCDTDigital = 1;
+}
+service ConsultaNovedadGrpc {
+  rpc consultarNovedad(GetNovedadByDocumentRequest) returns (NovedadResponse);
+}
